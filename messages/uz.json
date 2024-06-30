@@ -1,0 +1,61 @@
+{
+  "header": {
+    "Price": "Balans",
+    "Orders": "Buyurtmalar",
+    "Recharge balance": "Balansni toʻldirish",
+    "Log out": "Chiqish",
+    "Hotels": "Mehmonxonalar",
+    "Flights": "Reyslar"
+  },
+  "home": {
+    "Flights": "Reyslar",
+    "Hotels": "Mehmonxonalar",
+    "One-way": "Bir tomonlama",
+    "Round-trip": "Ikki tomonlama",
+    "Multi-city": "Shaharlar orqali",
+    "All": "Hammasi",
+    "Economy": "Ekonom",
+    "Business": "Biznes",
+    "First": "Birinchi",
+    "Adults": "Kattalar",
+    "Child": "Bola",
+    "Children": "Bolalar",
+    "Babies": "Chaqaloqlar",
+    "Infants": "Nogironlar",
+    "2-11 years": "2-11 yosh",
+    "0-2 years": "0-2 yosh",
+    "Under 2 years": "2 yoshdan katta",
+    "With cities": "Shaharlari orqali",
+    "Without cities": "To'g'ridan to'gri",
+
+    "Destination": "Qayerdan",
+    "To": "Qayerga",
+    "Date": "Sana",
+    "Add a route": "Marshrut qo'shish",
+    "Search": "Qidirish",
+    "Pick a date": "Sanani tanlang",
+
+    "Popular destinations": "Mashhur joylar",
+    "Your Trip Starts Here": "Sizning parvozingiz shu yerdan boshlanadi",
+    "Recommendations": "Tavsiyalari",
+    "Popular Flights": "Mashhur Reyslar",
+    "Popular Hotels": "Mashhur Mehmonxonalar",
+    "hotel_recommendation": "{name}dagi eng yaxshi mehmonxonalar"
+  },
+  "auth": {
+    "Sign In": "Tizimga kirish",
+    "Sign Up": "Ro'yxatdan o'tish",
+    "Username": "Foydalanuvchi nomi",
+    "Email": "Email",
+    "Password": "Parol",
+    "Repeat password": "Parolni qayta kiriting",
+    "Forgot password?": "Parolni unutdingmizmi?",
+    "Username must be at least 2 characters": "Foydalanuvchi nomi 2 harfdan kam bo'lishi kerak",
+    "Please enter a valid email address": "Email manzilini to'g'ri kiriting",
+    "Password must be at least 5 characters": "Parol 5 harfdan kam bo'lishi kerak",
+    "Submit": "Yuborish",
+    "Already have an account": "Akkountingiz bormi?",
+    "Don't have an account": "Akkountingiz yo'qmi?",
+    "Reset": "Tiklash"
+  }
+}

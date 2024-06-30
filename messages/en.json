@@ -1,0 +1,61 @@
+{
+  "header": {
+    "Price": "Balance",
+    "Orders": "Orders",
+    "Recharge balance": "Recharge balance",
+    "Log out": "Log out",
+    "Hotels": "Hotels",
+    "Flights": "Flights"
+  },
+  "home": {
+    "Flights": "Flights",
+    "Hotels": "Hotels",
+    "One-way": "One-way",
+    "Round-trip": "Round-trip",
+    "Multi-city": "Multi-city",
+    "All": "All",
+    "Economy": "Economy",
+    "Business": "Business",
+    "First": "First",
+    "Adults": "Adults",
+    "Child": "Child",
+    "Children": "Children",
+    "Babies": "Babies",
+    "Infants": "Infants",
+    "2-11 years": "2-11 years",
+    "0-2 years": "0-2 years",
+    "Under 2 years": "Under 2 years",
+    "With cities": "With cities",
+    "Without cities": "Non-stop",
+
+    "Destination": "Destination",
+    "To": "To",
+    "Date": "Date",
+    "Add a route": "Add a route",
+    "Search": "Search",
+    "Pick a date": "Pick a date",
+
+    "Popular destinations": "Popular destinations",
+    "Your Trip Starts Here": "Your Trip Starts Here",
+    "Recommendations": "Recommendations",
+    "Popular Flights": "Popular Flights",
+    "Popular Hotels": "Popular Hotels",
+    "hotel_recommendation": "Best Hotels in {name}"
+  },
+  "auth": {
+    "Sign In": "Sign In",
+    "Sign Up": "Sign Up",
+    "Username": "Username",
+    "Email": "Email",
+    "Password": "Password",
+    "Repeat password": "Repeat password",
+    "Forgot password?": "Forgot password?",
+    "Username must be at least 2 characters": "Username must be at least 2 characters.",
+    "Please enter a valid email address": "Please enter a valid email address.",
+    "Password must be at least 5 characters": "Password must be at least 6 characters.",
+    "Submit": "Submit",
+    "Already have an account": "Already have an account?",
+    "Don't have an account": "Don't have an account?",
+    "Reset": "Reset"
+  }
+}
