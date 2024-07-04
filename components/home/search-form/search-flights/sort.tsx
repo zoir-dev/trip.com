@@ -5,6 +5,7 @@ import { CaretSortIcon } from "@radix-ui/react-icons"
 import { Plane, RockingChair } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { useState } from "react"
+import MultiCityForm from "./multi-city"
 
 const SortFlights = () => {
     const t = useTranslations('home')
@@ -52,6 +53,7 @@ const SortFlights = () => {
                     </DropdownMenuContent>
                 </DropdownMenu>
             </div>
+            {trip === "multi-city" && <MultiCityForm />}
         </div>
     )
 }
