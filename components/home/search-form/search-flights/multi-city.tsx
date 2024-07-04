@@ -3,6 +3,8 @@ import { useRouter } from 'next/router';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import DatePickerWithRange from './data-input';
+
 
 interface Flight {
     id: number;
@@ -48,19 +50,18 @@ const MultiCityForm = () => {
     };
 
     return (
-        <div className="max-w-2xl mx-auto p-4">
-            <h2 className="text-2xl font-bold mb-4">Multi-City Flight Search</h2>
+        <div className="w-full mx-auto py-4">
             <form>
                 {flights.map((flight) => (
-                    <div key={flight.id} className="mb-4 p-4 border rounded-lg">
-                        <div className="grid grid-cols-3 gap-4 mb-2">
-                            <div>
+                    <div key={flight.id} className="mb-3 p-2 border rounded-lg">
+                        <div className="grid grid-cols-3 gap-4">
+                            <div className=''>
                                 <Select
                                     value={flight.from}
                                     onValueChange={(value) => handleInputChange(flight.id, 'from', value)}
                                     required
                                 >
-                                    <SelectTrigger className="w-[180px]">
+                                    <SelectTrigger className="w-full">
                                         <SelectValue placeholder="From" />
                                     </SelectTrigger>
                                     <SelectContent>
@@ -78,7 +79,7 @@ const MultiCityForm = () => {
                                     onValueChange={(value) => handleInputChange(flight.id, 'to', value)}
                                     required
                                 >
-                                    <SelectTrigger className="w-[180px]">
+                                    <SelectTrigger className="w-full">
                                         <SelectValue placeholder="To" />
                                     </SelectTrigger>
                                     <SelectContent>
@@ -91,18 +92,12 @@ const MultiCityForm = () => {
                                 </Select>
                             </div>
                             <div>
-                                <Input
-                                    type="date"
-                                    value={flight.date}
-                                    onChange={(e) => handleInputChange(flight.id, 'date', e.target.value)}
-                                    className="w-full p-2 border rounded"
-                                    required
-                                />
+                                <DatePickerWithRange/>
                             </div>
                         </div>
                     </div>
                 ))}
-                <div className="flex space-x-4">
+                <div className="flex justify-between items-center">
                     {flights.length < 5 && (
                         <Button
                             type="button"
