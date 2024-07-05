@@ -46,7 +46,8 @@ const MultiCityForm = () => {
         const path = flights
             .map((flight) => `${flight.from.toLocaleLowerCase()}-to-${flight.to.toLocaleLowerCase()}-${flight.date}`)
             .join('&');
-        router.push(`/flights/${path}`);
+        // router.push(`/flights/${path}`);
+        router.push(`/flights`);
     };
 
     return (
