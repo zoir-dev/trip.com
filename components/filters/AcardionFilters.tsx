@@ -17,6 +17,8 @@ import {
 } from "@/components/ui/form"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { toast } from "@/components/ui/use-toast" 
+// import { Checkbox } from "@radix-ui/react-checkbox"
+import { Checkbox } from "@/components/ui/checkbox"
 
 const FormSchema = z.object({
     type: z.enum(["all", "mentions", "none"], {
@@ -45,10 +47,10 @@ function AcardionFilters() {
         <AccordionItem value="item-1">
           <AccordionTrigger>Stopover Cities</AccordionTrigger>
           <AccordionContent className="flex justify-start items-center gap-2 px-3">
-            <input type="checkbox" id="terms1" />
+            <Checkbox id="seul"/>
             <div className="grid gap-1.5 leading-none">
                 <label
-                htmlFor="terms1"
+                htmlFor="seul"
                 className="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 >
                     Seul
@@ -56,10 +58,10 @@ function AcardionFilters() {
             </div>
           </AccordionContent>
           <AccordionContent className="flex justify-start items-center gap-2 px-3">
-            <input type="checkbox" id="terms2" />
+            <Checkbox id="beijing"/>
             <div className="grid gap-1.5 leading-none">
                 <label
-                htmlFor="terms2"
+                htmlFor="beijing"
                 className="text-sm  leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 >
                     Beijing
@@ -67,10 +69,10 @@ function AcardionFilters() {
             </div>
           </AccordionContent>
           <AccordionContent className="flex justify-start items-center gap-2 px-3">
-            <input type="checkbox" id="terms3" />
+            <Checkbox id="almaty" />
             <div className="grid gap-1.5 leading-none">
                 <label
-                htmlFor="terms3"
+                htmlFor="almaty"
                 className="text-sm  leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 >
                     Almaty
@@ -78,10 +80,10 @@ function AcardionFilters() {
             </div>
           </AccordionContent>
           <AccordionContent className="flex justify-start items-center gap-2 px-3">
-            <input type="checkbox" id="terms4" />
+            <Checkbox id="hongkong" />
             <div className="grid gap-1.5 leading-none">
                 <label
-                htmlFor="terms4"
+                htmlFor="hingkong"
                 className="text-sm  leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 >
                     Hong Kong
@@ -89,10 +91,10 @@ function AcardionFilters() {
             </div>
           </AccordionContent>
           <AccordionContent className="flex justify-start items-center gap-2 px-3">
-            <input type="checkbox" id="terms5" />
+            <Checkbox id="dubai" />
             <div className="grid gap-1.5 leading-none">
                 <label
-                htmlFor="terms5"
+                htmlFor="dubai"
                 className="text-sm  leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 >
                     Dubai
@@ -100,10 +102,10 @@ function AcardionFilters() {
             </div>
           </AccordionContent>
           <AccordionContent className="flex justify-start items-center gap-2 px-3">
-            <input type="checkbox" id="terms6" />
+            <Checkbox id="shanghai" />
             <div className="grid gap-1.5 leading-none">
                 <label
-                htmlFor="terms6"
+                htmlFor="shanghai"
                 className="text-sm  leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 >
                     Shanghai
@@ -114,10 +116,10 @@ function AcardionFilters() {
         <AccordionItem value="item-2">
         <AccordionTrigger>Airpots</AccordionTrigger>
           <AccordionContent className="flex justify-start items-center gap-2 px-3">
-            <input type="checkbox" id="terms1" />
+            <Checkbox id="seul1" />
             <div className="grid gap-1.5 leading-none">
                 <label
-                htmlFor="terms1"
+                htmlFor="seul1"
                 className="text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 >
                     Seul
@@ -125,10 +127,10 @@ function AcardionFilters() {
             </div>
           </AccordionContent>
           <AccordionContent className="flex justify-start items-center gap-2 px-3">
-            <input type="checkbox" id="terms2" />
+            <Checkbox id="beijing1"/>
             <div className="grid gap-1.5 leading-none">
                 <label
-                htmlFor="terms2"
+                htmlFor="beijing1"
                 className="text-sm  leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 >
                     Beijing
