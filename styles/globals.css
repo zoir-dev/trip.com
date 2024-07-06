@@ -55,6 +55,8 @@
     --input: 355 67% 20%;
     --ring: 355 77.8% 60.2%;
   }
+
+  
 }
 
 @layer base {
@@ -65,3 +67,13 @@
     @apply bg-background text-foreground !font-sans;
   }
 }
+
+.slick-dots{
+  display: none !important;
+}
+
+.slick-prev:before, .slick-next:before{
+    font-size: 30px !important;    
+    color: hsl(var(--primary)) !important;
+}
+

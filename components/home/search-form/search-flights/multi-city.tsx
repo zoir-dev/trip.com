@@ -8,6 +8,7 @@ import { CalendarIcon } from 'lucide-react';
 import { useTranslations } from "next-intl";
 import { FormEvent, useState } from 'react';
 import { z } from 'zod';
+import DatePickerWithRange from './data-input';
 
 interface Flight {
     id: number;
@@ -97,12 +98,28 @@ const MultiCityForm = ({ searchPath }: MultiCityFormProps) => {
                     <div key={flight.id} className="mb-4 p-4 border rounded-lg">
                         <div className="grid grid-cols-3 gap-4 mb-2 max-[690px]:grid-cols-1">
                             <div>
+    const searchFlights = () => {
+        const path = flights
+            .map((flight) => `${flight.from.toLocaleLowerCase()}-to-${flight.to.toLocaleLowerCase()}-${flight.date}`)
+            .join('&');
+        // router.push(`/flights/${path}`);
+        router.push(`/flights`);
+    };
+
+    return (
+        <div className="w-full mx-auto py-4">
+            <form>
+                {flights.map((flight) => (
+                    <div key={flight.id} className="mb-3 p-2 border rounded-lg">
+                        <div className="grid grid-cols-3 gap-4">
+                            <div className=''>
                                 <Select
                                     value={flight.from}
                                     onValueChange={(value) => handleInputChange(flight.id, 'from', value)}
                                     required
                                 >
                                     <SelectTrigger className="">
+                                    <SelectTrigger className="w-full">
                                         <SelectValue placeholder="From" />
                                     </SelectTrigger>
                                     <SelectContent>
@@ -124,6 +141,7 @@ const MultiCityForm = ({ searchPath }: MultiCityFormProps) => {
                                     required
                                 >
                                     <SelectTrigger className="">
+                                    <SelectTrigger className="w-full">
                                         <SelectValue placeholder="To" />
                                     </SelectTrigger>
                                     <SelectContent>
@@ -162,11 +180,13 @@ const MultiCityForm = ({ searchPath }: MultiCityFormProps) => {
                                     </PopoverContent>
                                 </Popover>
                                 {errors[flight.id]?.date && <p className="text-red-500">{errors[flight.id]?.date}</p>}
+                                <DatePickerWithRange/>
                             </div>
                         </div>
                     </div>
                 ))}
                 <div className="flex space-x-4 w-full justify-between">
+                <div className="flex justify-between items-center">
                     {flights.length < 5 && (
                         <Button
                             variant={'default'}

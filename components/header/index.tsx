@@ -12,7 +12,7 @@ import { Link } from '@/navigation'
 const Header = () => {
   const t = useTranslations()
   const pathname = usePathname()
-  const pathnames = ['/login', '/registration']
+  const pathnames = ['/login', '/registration', '/flights']
 
   const token = ''
 
