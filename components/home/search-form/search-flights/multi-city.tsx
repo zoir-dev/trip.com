@@ -90,21 +90,21 @@ const MultiCityForm = ({ searchPath }: MultiCityFormProps) => {
         searchPath(path); // Call the function with the path argument
     };
 
-    return (
-        <div className="my-4">
-            <h2 className="text-2xl font-bold mb-4 sr-only">Multi-City Flight Search</h2>
-            <form onSubmit={(evt) => searchFlights(evt)}>
-                {flights.map((flight) => (
-                    <div key={flight.id} className="mb-4 p-4 border rounded-lg">
-                        <div className="grid grid-cols-3 gap-4 mb-2 max-[690px]:grid-cols-1">
-                            <div>
-    const searchFlights = () => {
-        const path = flights
-            .map((flight) => `${flight.from.toLocaleLowerCase()}-to-${flight.to.toLocaleLowerCase()}-${flight.date}`)
-            .join('&');
-        // router.push(`/flights/${path}`);
-        router.push(`/flights`);
-    };
+    // return (
+    //     <div className="my-4">
+    //         <h2 className="text-2xl font-bold mb-4 sr-only">Multi-City Flight Search</h2>
+    //         <form onSubmit={(evt) => searchFlights(evt)}>
+    //             {flights.map((flight) => (
+    //                 <div key={flight.id} className="mb-4 p-4 border rounded-lg">
+    //                     <div className="grid grid-cols-3 gap-4 mb-2 max-[690px]:grid-cols-1">
+    //                         <div>
+    // const searchFlights = () => {
+    //     const path = flights
+    //         .map((flight) => `${flight.from.toLocaleLowerCase()}-to-${flight.to.toLocaleLowerCase()}-${flight.date}`)
+    //         .join('&');
+    //     // router.push(`/flights/${path}`);
+    //     router.push(`/flights`);
+    // };
 
     return (
         <div className="w-full mx-auto py-4">
@@ -118,7 +118,6 @@ const MultiCityForm = ({ searchPath }: MultiCityFormProps) => {
                                     onValueChange={(value) => handleInputChange(flight.id, 'from', value)}
                                     required
                                 >
-                                    <SelectTrigger className="">
                                     <SelectTrigger className="w-full">
                                         <SelectValue placeholder="From" />
                                     </SelectTrigger>
@@ -132,7 +131,7 @@ const MultiCityForm = ({ searchPath }: MultiCityFormProps) => {
                                         </SelectGroup>
                                     </SelectContent>
                                 </Select>
-                                {errors[flight.id]?.from && <p className="text-red-500">{errors[flight.id]?.from}</p>}
+                                {errors[flight.id]?.from && <p className="text-red-500 text-sm">{errors[flight.id]?.from}</p>}
                             </div>
                             <div>
                                 <Select
@@ -140,7 +139,6 @@ const MultiCityForm = ({ searchPath }: MultiCityFormProps) => {
                                     onValueChange={(value) => handleInputChange(flight.id, 'to', value)}
                                     required
                                 >
-                                    <SelectTrigger className="">
                                     <SelectTrigger className="w-full">
                                         <SelectValue placeholder="To" />
                                     </SelectTrigger>
@@ -154,7 +152,7 @@ const MultiCityForm = ({ searchPath }: MultiCityFormProps) => {
                                         </SelectGroup>
                                     </SelectContent>
                                 </Select>
-                                {errors[flight.id]?.to && <p className="text-red-500">{errors[flight.id]?.to}</p>}
+                                {errors[flight.id]?.to && <p className="text-red-500 text-sm">{errors[flight.id]?.to}</p>}
                             </div>
                             <div>
                                 <Popover>
@@ -179,13 +177,11 @@ const MultiCityForm = ({ searchPath }: MultiCityFormProps) => {
                                         />
                                     </PopoverContent>
                                 </Popover>
-                                {errors[flight.id]?.date && <p className="text-red-500">{errors[flight.id]?.date}</p>}
-                                <DatePickerWithRange/>
+                                {errors[flight.id]?.date && <p className="text-red-500 text-sm">{errors[flight.id]?.date}</p>}
                             </div>
                         </div>
                     </div>
                 ))}
-                <div className="flex space-x-4 w-full justify-between">
                 <div className="flex justify-between items-center">
                     {flights.length < 5 && (
                         <Button
