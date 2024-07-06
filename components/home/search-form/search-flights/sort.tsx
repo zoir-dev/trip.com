@@ -1,23 +1,36 @@
+'use client'
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import Passangers from "@/components/ui/passangers"
 import { CaretSortIcon } from "@radix-ui/react-icons"
 import { Plane, RockingChair } from "lucide-react"
 import { useTranslations } from "next-intl"
-import { useState } from "react"
+import { Dispatch, useEffect, useState } from "react"
 import MultiCityForm from "./multi-city"
+import OneWayForm from "./one-way"
+import { useRouter } from "next/router"
+import RoundTrip from "./round-trip"
 
 const SortFlights = () => {
+    const router = useRouter();
     const t = useTranslations('home')
     const [type, setType] = useState("all")
+    const [path, setPath] = useState<string>("")
     const [trip, setTrip] = useState("one-way")
     const [numbers, setNumbers] = useState<any>({ adt: 1, chd: 0, ins: 0, inf: 0 })
+
+    useEffect(() => {
+        if (path) {
+            router.push(`/flights/${path}${trip === "multi-city" ? "&flighttype=mc" : trip === "one-way" ? "&flighttype=ow" : "&flighttype=rt"}${numbers.adt ? `?adt=${numbers.adt}` : ''}${numbers.chd ? `&chd=${numbers.chd}` : ''}${numbers.ins ? `&ins=${numbers.ins}` : ''}${numbers.inf ? `&inf=${numbers.inf}` : ''}&class=${type}`)
+        }
+    }, [path])
+
     return (
         <div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 max-[656px]:flex-col">
                 <DropdownMenu>
                     <DropdownMenuTrigger>
-                        <Button variant="outline" >
+                        <Button variant="outline" className="max-[656px]:w-[288px] max-[656px]:justify-start">
                             <Plane width={18} />
                             {t(trip.charAt(0).toUpperCase() + trip.slice(1))}
                             <CaretSortIcon className="h-4 w-4" />
@@ -36,7 +49,7 @@ const SortFlights = () => {
                 <Passangers numbers={numbers} setNumbers={setNumbers} />
                 <DropdownMenu>
                     <DropdownMenuTrigger>
-                        <Button variant="outline" >
+                        <Button variant="outline" className="max-[656px]:w-[288px] max-[656px]:justify-start">
                             <RockingChair width={18} />
                             {t(type.charAt(0).toUpperCase() + type.slice(1))}
                             <CaretSortIcon className="h-4 w-4" />
@@ -53,7 +66,7 @@ const SortFlights = () => {
                     </DropdownMenuContent>
                 </DropdownMenu>
             </div>
-            {trip === "multi-city" && <MultiCityForm />}
+            {trip === "multi-city" ? <MultiCityForm searchPath={setPath} /> : trip === "one-way" ? <OneWayForm searchPath={setPath} /> : <RoundTrip searchPath={setPath} />}
         </div>
     )
 }
