@@ -5,10 +5,10 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 import { cn } from '@/lib/utils';
 import { format } from "date-fns";
 import { CalendarIcon } from 'lucide-react';
+import { GetStaticProps } from 'next';
 import { useTranslations } from "next-intl";
 import { FormEvent, useState } from 'react';
 import { z } from 'zod';
-import DatePickerWithRange from './data-input';
 
 interface Flight {
     id: number;
@@ -43,7 +43,7 @@ interface MultiCityFormProps {
 }
 
 const MultiCityForm = ({ searchPath }: MultiCityFormProps) => {
-    const t = useTranslations('');
+    const t = useTranslations('home');
     const [flights, setFlights] = useState<Flight[]>([{ id: 1, from: '', to: '', date: '' }]);
     const [errors, setErrors] = useState<Record<number, FlightErrors>>({});
 
@@ -165,7 +165,7 @@ const MultiCityForm = ({ searchPath }: MultiCityFormProps) => {
                                             )}
                                         >
                                             <CalendarIcon className="mr-2 h-4 w-4" />
-                                            {flight.date ? format(new Date(flight.date), "PPP") : <span>Pick a date</span>}
+                                            {flight.date ? format(new Date(flight.date), "PPP") : <span>{t("Pick a date")}</span>}
                                         </Button>
                                     </PopoverTrigger>
                                     <PopoverContent className="w-auto p-0" align="start">
@@ -198,7 +198,7 @@ const MultiCityForm = ({ searchPath }: MultiCityFormProps) => {
                         type="submit"
                         className="mt-4 w-2/5 p-2 rounded max-[690px]:w-full"
                     >
-                        Search
+                        {t("Search")}
                     </Button>
                 </div>
             </form>
@@ -207,3 +207,12 @@ const MultiCityForm = ({ searchPath }: MultiCityFormProps) => {
 };
 
 export default MultiCityForm;
+
+
+export const getStaticProps = (async (context) => {
+    return {
+        props: {
+            messages: (await import(`../../../../messages/${context.locale}.json`)).default,
+        },
+    };
+}) satisfies GetStaticProps;
