@@ -40,7 +40,7 @@ function FlightTable() {
 
   const handleSelectClick = () => {
     setShowBookCards(!showBookCards);
-    setBtnText(showBookCards ? "Hide" : "Select")
+    setBtnText(!showBookCards ? "Hide" : "Select")
   };
 
   return (
@@ -250,7 +250,7 @@ function FlightTable() {
 
             <div className='flex md:gap-2 gap-1 items-center'>
               <h3 className='font-sans font-semibold lg:text-2xl text-xs'>$855</h3>
-              <Button className='py-3 ' onClick={handleSelectClick}>Select 
+              <Button className='py-3' onClick={handleSelectClick}>{btnText} 
                 <Image src={"/icons/down-arrow2.png"} width={20} height={20} alt="arrow-right"/>
               </Button>
             </div>
