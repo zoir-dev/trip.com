@@ -57,5 +57,9 @@
     "Already have an account": "Akkountingiz bormi?",
     "Don't have an account": "Akkountingiz yo'qmi?",
     "Reset": "Tiklash"
+  },
+  "flights": {
+    "Flights": "Reyslar",
+    "Filters": "Filtrlar"
   }
 }
