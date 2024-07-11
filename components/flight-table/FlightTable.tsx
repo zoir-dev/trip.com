@@ -262,7 +262,6 @@ function FlightTable() {
             <BookCard/>
             <BookCard/>
             <BookCard/>
-            <BookCard/>
           </div>
         }
       </div>
