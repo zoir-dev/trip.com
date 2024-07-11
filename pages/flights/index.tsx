@@ -12,6 +12,7 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import FlightTable from '@/components/flight-table/FlightTable'
 
 function Flights() {
   return (
@@ -19,9 +20,9 @@ function Flights() {
       <div className='container'>
         <div className='pt-20'>
           <DateCarusel/>
-          <div className='mt-10 flex'>
+          <div className='mt-10 md:flex gap-2'>
             {/* Desktop version */}
-            <ScrollArea className='py-10 md:block hidden scroll-area-custom'>
+            <ScrollArea className='md:block hidden scroll-area-custom w-[30%]'>
               <RecommendFilters/>
               <AirlinesFilter/>
               <StopsFilters/>
@@ -30,7 +31,7 @@ function Flights() {
             {/* Desktop version */}
 
             {/* Mobile version */}
-            <div className='md:hidden block w-full'>
+            <div className='md:hidden block w-full mb-5'>
               <Sheet>
                 <SheetTrigger asChild>
                   <Button variant="outline">Filters</Button>
@@ -46,6 +47,7 @@ function Flights() {
               </Sheet>
             </div>
             {/* Mobile version */}
+            <FlightTable/>
           </div>
         </div>
       </div>

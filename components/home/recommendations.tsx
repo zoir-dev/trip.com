@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Button } from '../ui/button'
 import { Link } from '@/navigation'
 import { MoveRight } from 'lucide-react'
+import ContactForm from './search-form/ContactForm'
 
 const Recommendations = () => {
     const [tab, setTab] = useState('flight')
@@ -41,6 +42,7 @@ const Recommendations = () => {
                     ))
                 }
             </div>
+            <ContactForm />
         </div>
     )
 }
