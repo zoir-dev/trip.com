@@ -1,11 +1,11 @@
-/* eslint-disable react/jsx-no-undef */
-"use client" 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import Image from "next/image"
 import { useState } from "react"
 import { Checkbox } from "@/components/ui/checkbox"
+import { GetStaticProps } from 'next'
+import { useTranslations } from "next-intl"
 import {
   Form,
   FormControl,
@@ -21,7 +21,8 @@ import { toast } from "@/components/ui/use-toast"
     label: string
     image: string
  }
-const items: itemsType[] = [
+
+ const items: itemsType[] = [
   {
     id: "checked baggage included",
     label: "Checked baggage included",
@@ -48,6 +49,7 @@ const items: itemsType[] = [
     image: "/icons/flight.png",
   },  
 ]
+
  
 const FormSchema = z.object({
   items: z.array(z.string()).refine((value) => value.some((item) => item), {
@@ -56,13 +58,14 @@ const FormSchema = z.object({
 })
 
 function RecommendFilters() {
+    const t  = useTranslations("flights")
     const [ checkedItems, setCheckedItems ] = useState<string[]>([])
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
         defaultValues: {
             items: [],
         }
-      })
+      }) 
      
       function onSubmit(data: z.infer<typeof FormSchema>) {
         toast({
@@ -91,7 +94,7 @@ function RecommendFilters() {
           render={() => (
             <FormItem>
               <div className="mb-4">
-                <FormLabel className="text-base">Recommended</FormLabel>
+                <FormLabel className="text-base">{t("Recommended")}</FormLabel>
               </div>
               {items.map((item) => (
                 <FormField
@@ -125,7 +128,7 @@ function RecommendFilters() {
                         <FormLabel className={`text-sm font-normal ${
                             isChecked ? "text-primary" : ""
                           }`}>
-                          {item.label}
+                          {t(item.label)}
                         </FormLabel>
                       </FormItem>
                     )
@@ -143,3 +146,12 @@ function RecommendFilters() {
 }
 
 export default RecommendFilters
+
+
+export const getStaticProps = (async (context) => {
+  return {
+    props: {
+      messages: (await import(`../../messages/${context.locale}.json`)).default,
+    },
+  };
+}) satisfies GetStaticProps;

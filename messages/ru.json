@@ -36,5 +36,32 @@
     "Pick a date": "Выберите дату",
 
     "Popular destinations": "Популярные направления"
+  },
+  "flights": {
+    "Flights": "Рейсы",
+    "Filters": "Фильтры",
+    "view": "посмотреть",
+    "Recommended": "Рекомендуемые",
+    "Checked baggage included": "Включен зарегистрированный багаж",
+    "Hide low-cost airlines": "Скрыть бюджетные авиакомпании",
+    "Carry-on baggage included": "Включен ручной багаж",
+    "Student tickets": "Студенческие билеты",
+    "Hide codeshare flights": "Скрыть код-шеринговые рейсы",
+    "Airlines": "Авиакомпании",
+    "Show More": "Показать больше",
+    "Show Less": "Показать меньше",
+    "Stops": "Остановки",
+    "1 transfer or less": "1 перевод или меньше",
+    "2 transfer or less": "2 перевод или меньше",
+    "Stopover Cities": "Остановочные города",
+    "Airpots": "Аэропорты",
+    "Cabin": "Кабина",
+    "Sat": "Сб",
+    "Sun": "воск",
+    "Mon": "Пн",
+    "Tue": "Вт",    
+    "Wed": "Ср",
+    "Thu": "Чт",
+    "Fri": "Пт"
   }
 }

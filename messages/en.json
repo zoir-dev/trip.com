@@ -57,5 +57,32 @@
     "Already have an account": "Already have an account?",
     "Don't have an account": "Don't have an account?",
     "Reset": "Reset"
-  }
+  },
+  "flights": {
+    "Flights": "Flights",
+    "Filters": "Filters",
+    "view": "view",
+    "Recommended": "Recommended",
+    "Checked baggage included": "Checked baggage included",
+    "Hide low-cost airlines": "Hide low-cost airlines",
+    "Carry-on baggage included": "Carry-on baggage included",
+    "Student tickets": "Student tickets",
+    "Hide codeshare flights": "Hide codeshare flights",
+    "Airlines": "Airlines",
+    "Show More": "Show More",
+    "Show Less": "Show Less",
+    "Stops": "Stops",
+    "1 transfer or less": "1 transfer or less",
+    "2 transfer or less": "2 transfer or less",
+    "Stopover Cities": "Stopover Cities",
+    "Airpots": "Airpots",
+    "Cabin": "Cabin",
+    "Sat": "Sat",
+    "Sun": "Sun",
+    "Mon": "Mon",
+    "Tue": "Tue",    
+    "Wed": "Wed",
+    "Thu": "Thu",
+    "Fri": "Fri"
+ }
 }
