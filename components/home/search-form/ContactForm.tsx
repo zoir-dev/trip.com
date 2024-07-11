@@ -39,7 +39,7 @@ interface ContactFormProps {
   passwordId: string;
   idType: string;
   idExpressionDate: Date;
-} 
+}
 
 const formSchema = z.object({
   givenName: z.string().min(2, {
@@ -274,7 +274,7 @@ function ContactForm() {
                         <SelectContent>
                           <SelectGroup>
                             {form.watch("lastName") ? (
-                              <SelectItem value="passport">Passport</SelectItem>) : (<p> malumotni to'ldiring </p>)}
+                              <SelectItem value="passport">Passport</SelectItem>) : (<p> malumotni to&apos;ldiring </p>)}
                           </SelectGroup>
                         </SelectContent>
                       </Select>
