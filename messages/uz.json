@@ -84,5 +84,21 @@
     "Wed": "Chor",
     "Thu": "Pay",
     "Fri": "Juma"
-  }
+  },
+  "flight-table": {
+   "Departing to Taipei": "Jo'nab ketish vatqi",
+   "Last updated": "Yangilangan sanasi",
+   "Recommended": "Tavsiya",
+   "Lowest Price": "Eng arzon narx",
+   "Shortest Duration": "Eng qisqa vaqt",
+   "Sort By": "Saralash",
+   "Departure (Earliest) $708": "Jo'nab ketish (eng kichik) $708",
+   "Departure (Latest) $1357": "Jo'nab ketish (eng oxirgisi) $1357",
+   "Arrival (Earliest) $708": "Kelish (eng kichik) $708",
+   "Arrival (Latest) $771": "Kelish (eng oxirgisi) $771",
+   "Create Price Alert": "Narx haqida ogohlantirish yaratish",
+   "Select": "Tanlash",
+   "Hide": "Yashirish",
+   "Included": "ro'xsat etilganlar"
+  }  
 }

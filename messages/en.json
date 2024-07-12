@@ -84,5 +84,21 @@
     "Wed": "Wed",
     "Thu": "Thu",
     "Fri": "Fri"
- }
+ },
+ "flight-table": {
+  "Departing to Taipei": "Departing to Taipei",
+  "Last updated": "Last updated",
+  "Recommended": "Recommended",
+  "Lowest Price": "Lowest Price",
+  "Shortest Duration": "Shortest Duration",
+  "Sort By": "Sort By",
+  "Departure (Earliest) $708": "Departure (Earliest) $708",
+  "Departure (Latest) $1357": "Departure (Latest) $1357",
+   "Arrival (Earliest) $708": "Arrival (Earliest) $708",
+   "Arrival (Latest) $771": "Arrival (Latest) $771",
+   "Create Price Alert": "Create Price Alert",
+   "Select": "Select",
+   "Hide": "Hide",
+   "Included": "Included"
+ } 
 }
