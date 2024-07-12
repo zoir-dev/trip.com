@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-no-undef */
-"use client"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -9,15 +7,14 @@ import { Checkbox } from "@/components/ui/checkbox"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"
 import { toast } from "@/components/ui/use-toast"
-import { ButtonIcon } from "@radix-ui/react-icons"
-import { Button } from "../ui/button"
+import { GetStaticProps } from "next"
+import { useTranslations } from "next-intl"
 
 interface itemsType {
   id: string
@@ -47,6 +44,7 @@ const FormSchema = z.object({
 })
 
 function AirlinesFilter() {
+  const t = useTranslations("flights")
   const [showMore, setShowMore] = useState(false)
   const [checkedItems, setCheckedItems] = useState<string[]>([])
   const visibleAirlines = showMore ? items : items.slice(0, 5)
@@ -86,7 +84,7 @@ function AirlinesFilter() {
           render={() => (
             <FormItem>
               <div className="my-4">
-                <FormLabel className="text-base">Airlines</FormLabel>
+                <FormLabel className="text-base">{t("Airlines")}</FormLabel>
               </div>
               {visibleAirlines.map((item) => (
                 <FormField
@@ -138,7 +136,7 @@ function AirlinesFilter() {
                   className="text-primary cursor-pointer"
                   onClick={() => setShowMore(!showMore)}
                 >
-                  {showMore ? "Show Less" : "Show More"}
+                  {showMore ? t("Show Less") : t("Show More")}
                 </h3>
               </div>
               <FormMessage />
@@ -151,3 +149,12 @@ function AirlinesFilter() {
 }
 
 export default AirlinesFilter
+
+
+export const getStaticProps = (async (context) => {
+  return {
+    props: {
+      messages: (await import(`../../messages/${context.locale}.json`)).default,
+    },
+  };
+}) satisfies GetStaticProps;

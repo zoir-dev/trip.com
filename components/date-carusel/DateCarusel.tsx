@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import dates from "../../pages/flights/date.json";
+import { GetStaticProps } from "next";
+import { useTranslations } from "use-intl";
 
 const Carousel = () => {
+    const t  = useTranslations("flights");
     // State to track the index of the clicked div and its price
     const [clickedIndex, setClickedIndex] = useState<number | null>(null);
 
@@ -28,7 +31,7 @@ const Carousel = () => {
                     <div key={index} onClick={() => handleClick(index)} className="border-x cursor-pointer">
                         <h3 className="text-center font-bold">{date.date}</h3>
                         <p className="text-center">
-                            {clickedIndex === index ? date.price : "view"}
+                            {clickedIndex === index ? date.price : t("view")}
                         </p>
                     </div>
                 ))}
@@ -38,3 +41,11 @@ const Carousel = () => {
 };
 
 export default Carousel;
+
+export const getStaticProps = (async (context) => {
+    return {
+      props: {
+        messages: (await import(`../../messages/${context.locale}.json`)).default,
+      },
+    };
+  }) satisfies GetStaticProps;
