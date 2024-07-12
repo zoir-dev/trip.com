@@ -80,12 +80,11 @@ export function SearchCombobox({ onSelect, label, url }: thisProps) {
                                     key={item.item[locale]}
                                     value={item.item_code}
                                     onSelect={(val: any) => {
-                                        // console.log(item)
                                         setValue(item.item_code === value?.item_code ? "" : item)
                                         setOpen(false)
                                         onSelect(item.item_code)
                                     }}
-                                    className="cursor-pointer text-black z-20 relative"
+                                    className="cursor-pointer text-black relative"
                                 >
                                     <Check
                                         className={cn(

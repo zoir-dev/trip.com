@@ -6,6 +6,8 @@ import { z } from "zod"
 import Image from "next/image"
 import { useState } from "react"
 import { Checkbox } from "@/components/ui/checkbox"
+import { GetStaticProps } from 'next';
+import { useTranslations } from "use-intl"
 import {
   Form,
   FormControl,
@@ -39,6 +41,7 @@ const FormSchema = z.object({
 })
 
 function StopsFilters() {
+    const t = useTranslations("flights")
     const [ checkedItems, setCheckedItems ] = useState<string[]>([])
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
@@ -74,7 +77,7 @@ function StopsFilters() {
           render={() => (
             <FormItem>
               <div className="mb-4">
-                <FormLabel className="text-base">Stops</FormLabel>
+                <FormLabel className="text-base">{t("Stops")}</FormLabel>
               </div>
               {items.map((item) => (
                 <FormField
@@ -107,7 +110,7 @@ function StopsFilters() {
                         <FormLabel className={`text-sm font-normal ${
                             isChecked ? "text-primary" : ""
                           }`}>
-                          {item.label}
+                          {t(item.label)}
                         </FormLabel>
                       </FormItem>
                     )
@@ -125,3 +128,12 @@ function StopsFilters() {
 }
 
 export default StopsFilters
+
+
+export const getStaticProps = (async (context) => {
+  return {
+    props: {
+      messages: (await import(`../../messages/${context.locale}.json`)).default,
+    },
+  };
+}) satisfies GetStaticProps;

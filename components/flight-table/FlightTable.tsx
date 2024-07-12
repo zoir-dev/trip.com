@@ -5,14 +5,18 @@ import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/h
 import { Select, SelectContent, SelectGroup, SelectTrigger, SelectValue, SelectItem } from '@/components/ui/select';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import BookCard from '../bookCard/BookCard';
+import { useTranslations } from 'next-intl';
+import { GetStaticProps } from "next"
+import { X } from 'lucide-react';
 
 function FlightTable() {
+  const t = useTranslations("flight-table");
   const [time, setTime] = useState(new Date());
   const [isClient, setIsClient] = useState<boolean>(false);
   const [position, setPosition] = React.useState<string>("bottom")
   const [ selected, setSelected] = React.useState<string>("")
   const [ showBookCards, setShowBookCards] = React.useState<boolean>(false)
-  const [ btnText, setBtnText] = React.useState<string>("Select")
+  const [ btnText, setBtnText] = React.useState<string>(t("Select"))
 
   useEffect(() => {
     // Mark the component as mounted on the client
@@ -40,51 +44,51 @@ function FlightTable() {
 
   const handleSelectClick = () => {
     setShowBookCards(!showBookCards);
-    setBtnText(!showBookCards ? "Hide" : "Select")
+    setBtnText(!showBookCards ? t("Hide") : "Select")
   };
 
   return (
     <ScrollArea className='w-full'>
       <div className='bg-primary py-4 px-3 flex justify-between items-center rounded-t-md'>
-        <h1 className='text-white font-sans font-medium text-base'>Departing to Taipei</h1>
+        <h1 className='text-white font-sans font-medium text-base'>{t("Departing to Taipei")}</h1>
         {isClient && (
           <p className='text-white font-sans text-base'>
-            {`*Last updated: ${hour < 10 ? `0${hour}` : hour}:${minute < 10 ? `0${minute}` : minute}:${seconds < 10 ? `0${seconds}` : seconds}, ${day}/${month}/${year}`}
+            {`*${t("Last updated")}: ${hour < 10 ? `0${hour}` : hour}:${minute < 10 ? `0${minute}` : minute}:${seconds < 10 ? `0${seconds}` : seconds}, ${day}/${month}/${year}`}
           </p>
         )}
       </div>
 
       <div className='flex bg-white mt-1 cursor-pointer text-center'>
         <div className={`md:w-[20%] w-[26%] flex flex-col justify-center items-center hover:text-primary xl:px-7 py-2 border-x ${selected === 'recommended' ? 'border-b-[1px] border-primary' : ''}`} onClick={() => handleClick('recommended')}>
-          <h3 className='font-sans font-semibold md:font-medium md:text-base text-[12px]'>Recommended</h3>
+          <h3 className='font-sans font-semibold md:font-medium md:text-base text-[12px]'>{t("Recommended")}</h3>
           <p>$493</p>
         </div>
         <div className={`md:w-[20%] w-[22%] flex flex-col justify-center items-center hover:text-primary xl:px-7 py-2 border-x ${selected === 'lowest-price' ? 'border-b-[1px] border-primary' : ''}`} onClick={() => handleClick('lowest-price')}>
-          <h3 className='font-sans font-semibold md:font-medium md:text-base text-[12px]'>Lowest Price</h3>
+          <h3 className='font-sans font-semibold md:font-medium md:text-base text-[12px]'>{t("Lowest Price")}</h3>
           <p>$468</p>
         </div>
         <div className={`w-[18%] md:w-[20%] flex flex-col justify-center items-center hover:text-primary xl:px-7 py-2 border-x ${selected === 'shortest-duration' ? 'border-b-[1px] border-primary' : ''}`} onClick={() => handleClick('shortest-duration')}>
-          <h3 className='font-sans font-semibold md:font-medium  md:text-base text-[12px]'>Shortest Duration</h3>
+          <h3 className='font-sans font-semibold md:font-medium  md:text-base text-[12px]'>{t("Shortest Duration")}</h3>
           <p>$1,059</p>
         </div>
         <div className={`md:w-[18%] w-[20%] flex flex-col justify-center items-center hover:text-primary xl:px-10 py-2 border-x ${selected === 'short-by' ? 'border-b-[1px] border-primary' : ''}`} onClick={() => handleClick('short-by')}>
             <Select>
                 <SelectTrigger>
-                    <SelectValue className='font-sans font-semibold md:font-medium  md:text-base text-xs' placeholder="Sort By"/>
+                    <SelectValue className='font-sans font-semibold md:font-medium  md:text-base text-xs' placeholder={t("Sort By")}/>
                     <Image className='cursor-pointer mx-auto' src="/icons/down-arrow.png" width={20} height={20} alt="down-arrow" />
                 </SelectTrigger>
                 <SelectContent className="w-56">                    
                     <SelectGroup>
-                      <SelectItem value="Departure (Earliest) $708">Departure (Earliest) $708</SelectItem>
-                      <SelectItem value="Departure (Latest) $1,357">Departure (Latest) $1,357</SelectItem>
-                      <SelectItem value="Arrival (Earliest) $708">Arrival (Earliest) $708</SelectItem>
-                      <SelectItem value="Arrival (Latest) $771">Arrival (Latest) $771</SelectItem>
+                      <SelectItem value="Departure (Earliest) $708">{t("Departure (Earliest) $708")}</SelectItem>
+                      <SelectItem value="Departure (Latest) $1,357">{t("Departure (Latest) $1357")}</SelectItem>
+                      <SelectItem value="Arrival (Earliest) $708">{t("Arrival (Earliest) $708")}</SelectItem>
+                      <SelectItem value="Arrival (Latest) $771">{t("Arrival (Latest) $771")}</SelectItem>
                     </SelectGroup>
                 </SelectContent>
             </Select>
         </div>
         <div className={`w-[22%] flex flex-col justify-center items-center hover:text-primary xl:px-10 py-2 border-x ${selected === 'create-price-alert' ? 'border-b-[1px] border-primary' : ''}`} onClick={() => handleClick('create-price-alert')}>
-          <h3 className='font-sans font-semibold md:font-medium  md:text-base text-[12px]'>Create Price Alert</h3>
+          <h3 className='font-sans font-semibold md:font-medium  md:text-base text-[12px]'>{t("Create Price Alert")}</h3>
         </div>
       </div>
 
@@ -92,12 +96,12 @@ function FlightTable() {
         <div className='bg-white my-1 py-3 px-4'>
           <div className='flex gap-1 justify-start items-center'>
             <div className='bg-primary text-white p-1 rounded-sm'>
-              <h5 className='md:text-sm text-xs'>Shortest Duration</h5>              
+              <h5 className='md:text-sm text-xs'>{t("Shortest Duration")}</h5>              
             </div>
             <div className='bg-primary/10 text-primary p-1 rounded-sm flex gap-0.5 items-center'>
               <Image src={"/icons/baggages.png"} width={20} height={20} alt="baggages"/>
               <Image src={"/icons/suitcase.png"} width={20} height={20} alt="baggage"/>
-              <h5 className='md:text-sm text-xs'>Included</h5>              
+              <h5 className='md:text-sm text-xs'>{t("Included")}</h5>              
             </div>
           </div>
           <div className='flex items-center justify-between mt-4'>
@@ -270,3 +274,11 @@ function FlightTable() {
 }
 
 export default FlightTable;
+
+export const getStaticProps = (async (context) => {
+  return {
+    props: {
+      messages: (await import(`../../messages/${context.locale}.json`)).default,
+    },
+  };
+}) satisfies GetStaticProps;
