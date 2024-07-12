@@ -1,13 +1,13 @@
-import { useState, useTransition } from "react";
+import { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import dates from "../../pages/flights/date.json";
 import { GetStaticProps } from "next";
-import { useTranslations } from "use-intl";
+import { useTranslations } from "next-intl";
 
 const Carousel = () => {
-    const t  = useTranslations("flights");
+    const t = useTranslations("flights");
     // State to track the index of the clicked div and its price
     const [clickedIndex, setClickedIndex] = useState<number | null>(null);
 
@@ -44,8 +44,8 @@ export default Carousel;
 
 export const getStaticProps = (async (context) => {
     return {
-      props: {
-        messages: (await import(`../../messages/${context.locale}.json`)).default,
-      },
+        props: {
+            messages: (await import(`../../messages/${context.locale}.json`)).default,
+        },
     };
-  }) satisfies GetStaticProps;
+}) satisfies GetStaticProps;

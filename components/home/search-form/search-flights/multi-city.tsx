@@ -5,7 +5,7 @@ import { SearchCombobox } from '@/components/ui/search-combobox'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Plus, Search, Trash2 } from 'lucide-react'
 import { useFieldArray, useForm } from 'react-hook-form'
-import { useTranslations } from 'use-intl'
+import { useTranslations } from 'next-intl'
 import { z } from 'zod'
 
 const OneWay = () => {

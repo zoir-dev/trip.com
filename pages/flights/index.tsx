@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/sheet"
 import FlightTable from '@/components/flight-table/FlightTable'
 import { GetStaticProps } from 'next'
-import { useTranslations } from 'use-intl'
+import { useTranslations } from 'next-intl'
 
 function Flights() {
   const t = useTranslations('flights')

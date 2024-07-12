@@ -5,7 +5,7 @@ import { SearchCombobox } from '@/components/ui/search-combobox'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Search } from 'lucide-react'
 import { useForm } from 'react-hook-form'
-import { useTranslations } from 'use-intl'
+import { useTranslations } from 'next-intl'
 import { z } from 'zod'
 import DatePickerWithRange from './data-input'
 

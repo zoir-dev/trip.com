@@ -65,7 +65,7 @@ const SortFlights = () => {
                     </DropdownMenuContent>
                 </DropdownMenu>
             </div>
-            {trip === "multi-city" ? <MultiCityForm searchPath={setPath} /> : trip === "one-way" ? <OneWayForm /> : <OneWayForm round />}
+            {trip === "multi-city" ? <MultiCityForm /> : trip === "one-way" ? <OneWayForm /> : <OneWayForm round />}
         </div>
     )
 }

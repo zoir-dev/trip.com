@@ -37,24 +37,6 @@
 
     "Popular destinations": "Популярные направления"
   },
-<<<<<<< HEAD
-  "flight-table": {
-    "Departing to Taipei": "Отправление в Тайбэй",
-    "Last updated": "Последнее обновление",
-    "Recommended": "Рекомендуемые",
-    "Lowest Price": "Минимальная цена",
-    "Shortest Duration": "Минимальная продолжительность",
-    "Sort By": "Сортировать по",
-    "Departure (Earliest) $708": "Отправление (по возрастанию) $708",
-    "Departure (Latest) $1357": "Отправление (по убыванию) $1357",
-    "Arrival (Earliest) $708": "Конец (по возрастанию) $708",
-    "Arrival (Latest) $771": "Конец (по убыванию) $771",
-    "Create Price Alert": "Создать предупреждение о цене",
-    "Select": "Выбрать",
-    "Hide": "Скрыть",
-    "Included": "Включено"
-  }
-=======
   "flights": {
     "Flights": "Рейсы",
     "Filters": "Фильтры",
@@ -77,26 +59,25 @@
     "Sat": "Сб",
     "Sun": "воск",
     "Mon": "Пн",
-    "Tue": "Вт",    
+    "Tue": "Вт",
     "Wed": "Ср",
     "Thu": "Чт",
     "Fri": "Пт"
   },
   "flight-table": {
-   "Departing to Taipei": "Отправление в Тайбэй",
-   "Last updated": "Последнее обновление",
-   "Recommended": "Рекомендуемые",
-   "Lowest Price": "Минимальная цена",
-   "Shortest Duration": "Минимальная продолжительность",
-   "Sort By": "Сортировать по",
-   "Departure (Earliest) $708": "Отправление (по возрастанию) $708",
-   "Departure (Latest) $1357": "Отправление (по убыванию) $1357",
-   "Arrival (Earliest) $708": "Конец (по возрастанию) $708",
-   "Arrival (Latest) $771": "Конец (по убыванию) $771",
-   "Create Price Alert": "Создать предупреждение о цене",
-   "Select": "Выбрать",
-   "Hide": "Скрыть",
-   "Included": "Включено"
-  }  
->>>>>>> refs/remotes/origin/main
+    "Departing to Taipei": "Отправление в Тайбэй",
+    "Last updated": "Последнее обновление",
+    "Recommended": "Рекомендуемые",
+    "Lowest Price": "Минимальная цена",
+    "Shortest Duration": "Минимальная продолжительность",
+    "Sort By": "Сортировать по",
+    "Departure (Earliest) $708": "Отправление (по возрастанию) $708",
+    "Departure (Latest) $1357": "Отправление (по убыванию) $1357",
+    "Arrival (Earliest) $708": "Конец (по возрастанию) $708",
+    "Arrival (Latest) $771": "Конец (по убыванию) $771",
+    "Create Price Alert": "Создать предупреждение о цене",
+    "Select": "Выбрать",
+    "Hide": "Скрыть",
+    "Included": "Включено"
+  }
 }
