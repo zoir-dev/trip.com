@@ -13,14 +13,17 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
+import { useTranslations } from "next-intl"
 
 function DatePickerWithRange({
   className,
 }: React.HTMLAttributes<HTMLDivElement>) {
   const [date, setDate] = React.useState<DateRange | undefined>({
-    from: new Date(2022, 0, 20),
-    to: addDays(new Date(2022, 0, 20), 20),
+    from: undefined,
+    to: undefined,
   })
+
+  const t = useTranslations('shadcn')
 
   return (
     <div className={cn("grid gap-2", className)}>
@@ -30,7 +33,7 @@ function DatePickerWithRange({
             id="date"
             variant={"outline"}
             className={cn(
-              "w-[300px] justify-start text-left font-normal",
+              "justify-start text-left font-normal",
               !date && "text-muted-foreground"
             )}
           >
@@ -45,7 +48,7 @@ function DatePickerWithRange({
                 format(date.from, "LLL dd, y")
               )
             ) : (
-              <span>Pick a date</span>
+              <span>{t('Select date')}</span>
             )}
           </Button>
         </PopoverTrigger>
