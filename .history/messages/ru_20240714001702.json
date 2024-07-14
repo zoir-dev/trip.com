@@ -1,0 +1,62 @@
+{
+  "header": {
+    "Price": "Баланс",
+    "Orders": "Заказы",
+    "Recharge balance": "Пополнить баланс",
+    "Log out": "Выйти",
+    "Hotels": "Отели",
+    "Flights": "Рейсы"
+  },
+  "home": {
+    "Flights": "Рейсы",
+    "Hotels": "Отели",
+    "One-way": "В одну сторону",
+    "Round-trip": "Туда и обратно",
+    "Multi-city": "Несколько городов",
+    "All": "Все",
+    "Economy": "Эконом",
+    "Business": "Бизнес",
+    "First": "Первый",
+    "Adults": "Взрослые",
+    "Child": "Ребенок",
+    "Children": "Дети",
+    "Babies": "Младенцы",
+    "Infants": "Инвалиды",
+    "2-11 years": "2-11 лет",
+    "0-2 years": "0-2 лет",
+    "Under 2 years": "До 2 лет",
+    "With cities": "С городами",
+    "Without cities": "Без пересадок",
+
+    "Destination": "Откуда",
+    "To": "Куда",
+    "Date": "Дата",
+    "Add a route": "Добавить маршрут",
+    "Search": "Поиск",
+    "Pick a date": "Выберите дату",
+
+    "Popular destinations": "Популярные направления"
+  },
+  "Payment": {
+    "Passenger Info": "Информация о пассажире",
+    "Top Sellers": "Лучшие продавцы",
+    "Select Add-ons": "Выберите дополнения",
+    "Pay": "Оплатить",
+
+    "Trip to": "Поездка в",
+    "departure": "вылет",
+    "duration": "длительность",
+
+    "Your Ticket(s)": "Ваш билет(ы)",
+    "Baggage Allowance": "Разрешение на багаж",
+    "Carry-on Baggage": "Ручная кладь",
+    "Checked Baggage": "Зарегистрированный багаж",
+    "Policies": "Политики",
+    "Cancellation Fee": "Плата за отмену",
+    "Change Fee": "комиссия за изменение",
+    "Ticket Issuing Time": "Время выдачи билетов",
+    "Once payment is confirmed, tickets will be issued within 2 days.": "После подтверждения оплаты билеты будут выданы в течение 2 дней.",
+    "Know Before You Go": "Знай, прежде чем идти",
+    "Must Travel TogetherView Details": 
+  }
+}
