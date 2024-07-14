@@ -7,6 +7,8 @@ import {
     AccordionItem,
     AccordionTrigger,
   } from "@/components/ui/accordion"
+  import { GetStaticProps } from 'next';
+  import { useTranslations } from "next-intl";
 import {
     Form,
     FormControl,
@@ -27,6 +29,7 @@ const FormSchema = z.object({
   })
   
 function AcardionFilters() {
+    const t = useTranslations("flights")
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
     })
@@ -45,7 +48,7 @@ function AcardionFilters() {
        
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
-          <AccordionTrigger>Stopover Cities</AccordionTrigger>
+          <AccordionTrigger>{t("Stopover Cities")}</AccordionTrigger>
           <AccordionContent className="flex justify-start items-center gap-2 px-3">
             <Checkbox id="seul"/>
             <div className="grid gap-1.5 leading-none">
@@ -114,7 +117,7 @@ function AcardionFilters() {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
-        <AccordionTrigger>Airpots</AccordionTrigger>
+        <AccordionTrigger>{t("Airpots")}</AccordionTrigger>
           <AccordionContent className="flex justify-start items-center gap-2 px-3">
             <Checkbox id="seul1" />
             <div className="grid gap-1.5 leading-none">
@@ -139,7 +142,7 @@ function AcardionFilters() {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">
-          <AccordionTrigger>Cabin</AccordionTrigger>
+          <AccordionTrigger>{t("Cabin")}</AccordionTrigger>
           <AccordionContent>
           <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6">
@@ -196,4 +199,13 @@ function AcardionFilters() {
   }
 
   export default AcardionFilters
+
+
+  export const getStaticProps = (async (context) => {
+    return {
+      props: {
+        messages: (await import(`../../messages/${context.locale}.json`)).default,
+      },
+    };
+  }) satisfies GetStaticProps;
   

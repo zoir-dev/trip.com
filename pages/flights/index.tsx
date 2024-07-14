@@ -12,40 +12,45 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import FlightTable from '@/components/flight-table/FlightTable'
+import { GetStaticProps } from 'next'
+import { useTranslations } from 'next-intl'
 
 function Flights() {
+  const t = useTranslations('flights')
   return (
     <div className='bg-[#F0F2F4] h-full'>
       <div className='container'>
         <div className='pt-20'>
-          <DateCarusel/>
-          <div className='mt-10 flex'>
+          <DateCarusel />
+          <div className='mt-10 md:flex gap-2'>
             {/* Desktop version */}
-            <ScrollArea className='py-10 md:block hidden scroll-area-custom'>
-              <RecommendFilters/>
-              <AirlinesFilter/>
-              <StopsFilters/>
-              <AcardionFilters/>
+            <ScrollArea className='md:block hidden scroll-area-custom w-[30%]'>
+              <RecommendFilters />
+              <AirlinesFilter />
+              <StopsFilters />
+              <AcardionFilters />
             </ScrollArea>
             {/* Desktop version */}
 
             {/* Mobile version */}
-            <div className='md:hidden block w-full'>
+            <div className='md:hidden block w-full mb-5'>
               <Sheet>
                 <SheetTrigger asChild>
-                  <Button variant="outline">Filters</Button>
+                  <Button variant="outline">{t("Filters")}</Button>
                 </SheetTrigger>
                 <SheetContent className='h-full overflow-auto'>
                   <ScrollArea className='py-10 scroll-area-custom'>
-                    <RecommendFilters/>
-                    <AirlinesFilter/>
-                    <StopsFilters/>
-                    <AcardionFilters/>
+                    <RecommendFilters />
+                    <AirlinesFilter />
+                    <StopsFilters />
+                    <AcardionFilters />
                   </ScrollArea>
                 </SheetContent>
               </Sheet>
             </div>
             {/* Mobile version */}
+            <FlightTable />
           </div>
         </div>
       </div>
@@ -54,3 +59,11 @@ function Flights() {
 }
 
 export default Flights
+
+export const getStaticProps = (async (context) => {
+  return {
+    props: {
+      messages: (await import(`../../messages/${context.locale}.json`)).default,
+    },
+  };
+}) satisfies GetStaticProps;

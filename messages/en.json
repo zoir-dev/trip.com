@@ -40,7 +40,8 @@
     "Recommendations": "Recommendations",
     "Popular Flights": "Popular Flights",
     "Popular Hotels": "Popular Hotels",
-    "hotel_recommendation": "Best Hotels in {name}"
+    "hotel_recommendation": "Best Hotels in {name}",
+    "Please select": "Please select"
   },
   "auth": {
     "Sign In": "Sign In",
@@ -56,6 +57,55 @@
     "Submit": "Submit",
     "Already have an account": "Already have an account?",
     "Don't have an account": "Don't have an account?",
-    "Reset": "Reset"
+    "Reset": "Reset",
+    "Please select": "Please select"
+  },
+  "flight-table": {
+    "Departing to Taipei": "Departing to Taipei",
+    "Last updated": "Last updated",
+    "Recommended": "Recommended",
+    "Lowest Price": "Lowest Price",
+    "Shortest Duration": "Shortest Duration",
+    "Sort By": "Sort By",
+    "Departure (Earliest) $708": "Departure (Earliest) $708",
+    "Departure (Latest) $1357": "Departure (Latest) $1357",
+    "Arrival (Earliest) $708": "Arrival (Earliest) $708",
+    "Arrival (Latest) $771": "Arrival (Latest) $771",
+    "Create Price Alert": "Create Price Alert",
+    "Select": "Select",
+    "Hide": "Hide",
+    "Included": "Included"
+  },
+  "shadcn": {
+    "No results": "No results",
+    "Select date": "Select date"
+  },
+  "Reset": "Reset",
+  "flights": {
+    "Flights": "Flights",
+    "Filters": "Filters",
+    "view": "view",
+    "Recommended": "Recommended",
+    "Checked baggage included": "Checked baggage included",
+    "Hide low-cost airlines": "Hide low-cost airlines",
+    "Carry-on baggage included": "Carry-on baggage included",
+    "Student tickets": "Student tickets",
+    "Hide codeshare flights": "Hide codeshare flights",
+    "Airlines": "Airlines",
+    "Show More": "Show More",
+    "Show Less": "Show Less",
+    "Stops": "Stops",
+    "1 transfer or less": "1 transfer or less",
+    "2 transfer or less": "2 transfer or less",
+    "Stopover Cities": "Stopover Cities",
+    "Airpots": "Airpots",
+    "Cabin": "Cabin",
+    "Sat": "Sat",
+    "Sun": "Sun",
+    "Mon": "Mon",
+    "Tue": "Tue",
+    "Wed": "Wed",
+    "Thu": "Thu",
+    "Fri": "Fri"
   }
 }

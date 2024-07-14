@@ -1,11 +1,10 @@
-'use client'
 import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import Passangers from "@/components/ui/passangers"
 import { CaretSortIcon } from "@radix-ui/react-icons"
 import { Plane, RockingChair } from "lucide-react"
 import { useTranslations } from "next-intl"
-import { Dispatch, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import MultiCityForm from "./multi-city"
 import OneWayForm from "./one-way"
 import { useRouter } from "next/router"
@@ -23,7 +22,7 @@ const SortFlights = () => {
         if (path) {
             router.push(`/flights/${path}${trip === "multi-city" ? "&flighttype=mc" : trip === "one-way" ? "&flighttype=ow" : "&flighttype=rt"}${numbers.adt ? `?adt=${numbers.adt}` : ''}${numbers.chd ? `&chd=${numbers.chd}` : ''}${numbers.ins ? `&ins=${numbers.ins}` : ''}${numbers.inf ? `&inf=${numbers.inf}` : ''}&class=${type}`)
         }
-    }, [path])
+    }, [numbers.adt, numbers.chd, numbers.inf, numbers.ins, path, router, trip, type])
 
     return (
         <div>
@@ -66,7 +65,7 @@ const SortFlights = () => {
                     </DropdownMenuContent>
                 </DropdownMenu>
             </div>
-            {trip === "multi-city" ? <MultiCityForm searchPath={setPath} /> : trip === "one-way" ? <OneWayForm searchPath={setPath} /> : <RoundTrip searchPath={setPath} />}
+            {trip === "multi-city" ? <MultiCityForm /> : trip === "one-way" ? <OneWayForm /> : <OneWayForm round />}
         </div>
     )
 }

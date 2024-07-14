@@ -6,6 +6,11 @@
   font-family: var(--fonts-sans) !important;
 }
 
+.scroll-none {
+  scrollbar-width: none; /* Firefox uchun */
+  -ms-overflow-style: none;  /* Internet Explorer va Edge uchun */
+}
+
 .container2 {
   @apply max-w-[1160px] mx-auto;
 }
