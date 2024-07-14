@@ -7,8 +7,8 @@ import ContactForm from './search-form/ContactForm'
 
 const Recommendations = () => {
     const [tab, setTab] = useState('flight')
-
     const t = useTranslations('home')
+
     return (
         <div className='w-full container2 mx-auto flex flex-col gap-4'>
             <h2 className='text-3xl font-bold'>BiletBor.me {t("Recommendations")}</h2>

@@ -9,7 +9,7 @@ const PaymentStipper = () => {
                 <p>Passenger Info</p>
             </li>
             <li className='flex flex-col justify-center items-center'>
-                <span className='flex items-center justify-center rounded-[50%] border-2 p-2 w-[30px] h-[30px]  bg-gray-200 border-gray-200'>2</span>
+                <span className='flex items-center justify-center rounded-full border-2 p-2 w-[30px] h-[30px]  bg-gray-200 border-gray-200'>2</span>
                 <p>Top Sellers</p>
             </li>
             <li className='flex flex-col justify-center items-center'>

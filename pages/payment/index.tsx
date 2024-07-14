@@ -1,6 +1,5 @@
 import Layout from "@/components/payment/Layout";
-import React from "react";
-import { Button } from "@/components/ui/button";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import YoutTickets from "@/components/payment/YoutTickets";
 import Compensation from "@/components/payment/Compensation";
@@ -11,36 +10,44 @@ import PromoCodes from "@/components/payment/PromoCodes";
 import RootProvider from "@/hooks/RootProvider";
 import TotalPrice from "@/components/payment/TotalPrice";
 import TravelingForm from "@/components/payment/Traveling";
-import { GetStaticProps } from "next";
-import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 const PaymentPage = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null; // Render nothing on the server
+  }
 
   return (
     <RootProvider>
       <Layout>
         <div className="w-full max-w-[68%]">
           <div>
-            <span className=" flex items-center gap-x-5">
-              <h2 className="text-[#0f294d] text-[36px] font-bold">
+            <div className=" flex items-center gap-x-5">
+              <h2 className="text-primary text-4xl font-bold">
                 Trip to Taipei
               </h2>
-              <a
+              <Link
                 href="/"
-                className="text-[#3264ff] bg-slate-200 px-[7px] border-slate-200 border-[1px] hover:border-[#3264ff] rounded-[30px] text-[12px]"
+                className="text-primary bg-slate-200 px-2 border-slate-200 border-[1px] hover:border-primary rounded-[30px] text-xs"
               >
                 Change Flight
-              </a>
-            </span>
+              </Link>
+            </div>
             <div className="flex items-center gap-x-4 h-[30px] mt-6">
-              <span className=" bg-[blue] text-white px-2 py-1 rounded-md">
+              <span className=" bg-primary text-white px-2 py-1 rounded-md">
                 Depart
               </span>
-              <span className="text-[#252b31] text-[14px] font-medium">
+              <span className="text-sm font-medium">
                 Sat, Oct 5
               </span>
-              <span className="h-[100%] w-[1px] bg-gray-500"></span>
-              <span className="text-[#252b31] text-[14px] font-medium">
+              <span className="h-full w-[1px] bg-gray-500"></span>
+              <span className="text-sm font-medium">
                 Duration 2h 40m
               </span>
             </div>
@@ -49,7 +56,7 @@ const PaymentPage = () => {
               <ul className="flex flex-col gap-y-3">
                 <li className="flex items-center gap-x-8">
                   <span>10:30</span>
-                  <h4 className="text-[#0f294d] font-bold">
+                  <h4 className="text-primary font-bold">
                     ICN Seoul Incheon International AirportT2
                   </h4>
                 </li>
@@ -57,29 +64,31 @@ const PaymentPage = () => {
                   <Image
                     width={16}
                     height={16}
-                    className="w-[16px] h-[16px] text-center mr-6"
+                    className="w-4 h-4 text-center mr-6"
                     src="https://static.tripcdn.com/packages/flight/airline-logo/latest/airline_logo/3x/ke.webp"
                     alt=""
                   />
-                  <h4 className="text-[#252b31] text-[14px]">Korean AirKE185 Boeing 777-300 Economy class</h4>
+                  <h4 className="text-sm">
+                    Korean AirKE185 Boeing 777-300 Economy class
+                  </h4>
                 </li>
                 <li className="flex items-center gap-x-8">
                   <span>12:10</span>
-                  <h4 className="text-[#0f294d] font-bold">
+                  <h4 className="text-primary font-bold">
                     TPE Taipei Taiwan Taoyuan International AirportT1
                   </h4>
                 </li>
               </ul>
             </div>
 
-           <YoutTickets />
-           <TravelingForm />
-           <Compensation />
-           <Insurance />
-           <Discounts />
-           <ContactDetails />
-           <PromoCodes />
-           <TotalPrice />
+            <YoutTickets />
+            <TravelingForm />
+            <Compensation />
+            <Insurance />
+            <Discounts />
+            <ContactDetails />
+            <PromoCodes />
+            <TotalPrice />
           </div>
         </div>
       </Layout>

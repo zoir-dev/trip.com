@@ -104,7 +104,7 @@ function TravelingForm() {
       <div className="container bg-white rounded-lg md:flex">
         <div className="md:w-[100%] w-full">
           <Form {...form}>
-            <h1 className="text-2xl text-[#0f294d] font-bold mb-4">Contact Information</h1>
+            <h1 className="text-2xl text-primary font-bold mb-4">Contact Information</h1>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
               className="grid grid-cols-1 md:grid-cols-6 md:gap-6 gap-4"
@@ -270,7 +270,7 @@ function TravelingForm() {
                         <SelectContent>
                           <SelectGroup>
                             {form.watch("lastName") ? (
-                              <SelectItem value="passport">Passport</SelectItem>) : (<p> malumotni to'ldiring </p>)}
+                              <SelectItem value="passport">Passport</SelectItem>) : (<p> malumotni to&apos;ldiring </p>)}
                           </SelectGroup>
                         </SelectContent>
                       </Select>

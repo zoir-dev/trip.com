@@ -25,7 +25,7 @@ const Carousel = () => {
     }
 
     return (
-        <div className="slider-container mt-20 bg-white">
+        <div className="slider-container mt-10 bg-white">
             <Slider {...settings}>
                 {dates?.dates.map((date, index) => (
                     <div key={index} onClick={() => handleClick(index)} className="border-x cursor-pointer">

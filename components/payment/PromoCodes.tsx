@@ -41,7 +41,7 @@ const PromoCodes = () => {
 
   return (
     <div className="mt-8  mb-16 w-full">
-      <h3 className="text-[24px] font-bold text-[#0f294d]">Promo Codes</h3>
+      <h3 className="text-[24px] font-bold text-primary">Promo Codes</h3>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-8 mt-3">
           <FormField
