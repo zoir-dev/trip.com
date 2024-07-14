@@ -42,11 +42,9 @@
     "Top Sellers": "Лучшие продавцы",
     "Select Add-ons": "Выберите дополнения",
     "Pay": "Оплатить",
-
     "Trip to": "Поездка в",
     "departure": "вылет",
     "duration": "длительность",
-
     "Your Ticket(s)": "Ваш билет(ы)",
     "Baggage Allowance": "Разрешение на багаж",
     "Carry-on Baggage": "Ручная кладь",
@@ -57,7 +55,8 @@
     "Ticket Issuing Time": "Время выдачи билетов",
     "Once payment is confirmed, tickets will be issued within 2 days.": "После подтверждения оплаты билеты будут выданы в течение 2 дней.",
     "Know Before You Go": "Знай, прежде чем идти",
-    "Must Travel TogetherView Details": "Должны путешествовать вместе Подробнее"
+    "Must Travel TogetherView Details": "Должны путешествовать вместе Подробнее"  
+  },
   "flights": {
     "Flights": "Рейсы",
     "Filters": "Фильтры",

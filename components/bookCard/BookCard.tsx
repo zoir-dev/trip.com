@@ -1,7 +1,7 @@
 import React from 'react'
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card'
 import Image from 'next/image'
-import { Button } from '../ui/button'
+import { Button } from '@/components/ui/button'
 function BookCard() {
   return (
     <div className='p-5 border bg-white rounded-sm'>

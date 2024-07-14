@@ -19,6 +19,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Cross2Icon } from "@radix-ui/react-icons";
+import Link from "next/link";
 
 const invoices = [
   {
@@ -36,13 +37,14 @@ const invoices = [
 ];
 
 export function PaymentModal() {
+  
   return (
     <Sheet>
       <SheetTrigger asChild className="w-full">
         <ul className="flex flex-col gap-y-3 w-full">
           <li  className="flex items-center justify-between">
-            <Button variant="outline" className="text-[#0f294d] px-0 text-[14px] font-normal border-none hover:bg-[#fff] hover:text-[blue]" >Personal Item</Button>
-            <p className="text-[#06aebd] text-[14px]">Free</p>
+            <Button variant="outline" className="text-perimary px-0 text-sm font-normal border-none hover:bg-[#fff] hover:text-primary" >Personal Item</Button>
+            <p className="text-primary text-sm">Free</p>
           </li>
         </ul>
       </SheetTrigger>
@@ -50,142 +52,142 @@ export function PaymentModal() {
         side="right"
         className="w-[50%] p-0 pb-8 overflow-auto scroll-smooth"
       >
-        <SheetHeader className="w-full left-0 p-2 mb-6 sticky top-0 bg-white shadow-md">
-          <div className="flex items-center justify-between mb-4">
-            <SheetTitle>Baggage Allowance & Policies</SheetTitle>
-            <SheetPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
-              <Cross2Icon className="h-5 w-5" />
+        <SheetHeader className="w-full left-0 p-2 md:mb-6 mb-3 sticky top-0 bg-white shadow-md">
+          <div className="flex items-center justify-between md:mb-4 mb-1">
+            <SheetTitle className="md:text-lg sm:text-base text-sm h-full">Baggage Allowance & Policies</SheetTitle>
+            <SheetPrimitive.Close className="mr-1 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
+              <Cross2Icon className="md:h-5 md:w-5" />
               <span className="sr-only">Close</span>
             </SheetPrimitive.Close>
           </div>
-          <ul className="flex items-center justify-between px-3 pb-2">
+          <ul className="flex items-center justify-between md:px-3 px-0 md:pb-2 pb-1">
             <li>
-              <a href="#bookingInformation" className="hover:text-[blue]">
+              <Link href="#bookingInformation" className="md:text-base text-xs hover:text-primary">
                 Booking Information
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#baggageAllowance" className="hover:text-[blue]">
+              <Link href="#baggageAllowance" className="md:text-base text-xs hover:text-primary">
                 Baggage Allowance
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#flightCancellation" className="hover:text-[blue]">
+              <Link href="#flightCancellation" className="md:text-base text-xs hover:text-primary">
                 Flight Cancellation
-              </a>
+              </Link>
             </li>
           </ul>
         </SheetHeader>
-        <div className="flex px-4 flex-col gap-y-6">
+        <div className="flex px-4 flex-col md:gap-y-6 gap-y-3">
           <div id="bookingInformation">
-            <SheetTitle className="mb-3">Booking Information</SheetTitle>
+            <SheetTitle className="mb-3 md:text-lg text-base">Booking Information</SheetTitle>
             <ul className="flex flex-col border-[1px] border-gray-300 shadow-lg rounded-lg">
               <li className="flex gap-x-3 p-4 rounded-[6px]">
-                <Check className="text-[#05939f]" />
-                <span>
-                  <h4 className="text-[#0f294d] font-semibold mb-2">
+                <Check className="text-primary md:block hidden" />
+                <div>
+                  <h4 className="text-primary font-semibold mb-2">
                     Frequent Flyer Miles
                   </h4>
-                  <p className="text-[#0f294d] font-medium text-[14px]">
+                  <p className="text-primary font-medium ">
                     Passengers with a standard frequent flyer membership will
                     earn approximately 634 miles/points.{" "}
                   </p>
-                  <small className="text-[#8592a6]">
+                  <small className="text-[#8592a6] ">
                     *For reference only. Allocation of miles/points is dependent
                     on airline policy.
                   </small>
-                  <span className="flex items-center gap-x-3">
-                    <p className="text-[#8592a6] text-[14px]">
+                  <div className="flex items-center gap-x-3">
+                    <p className="text-[#8592a6] ">
                       Data provided by:
                     </p>
                     <b>30K</b>
-                  </span>
-                </span>
+                  </div>
+                </div>
               </li>
 
               <li className="flex gap-x-3 p-4 rounded-[6px]">
-                <Check className="text-[#05939f]" />
-                <span>
-                  <h4 className="text-[#0f294d] font-semibold mb-2">
+                <Check className="text-primary md:block hidden" />
+                <div>
+                  <h4 className="text-primary font-semibold mb-2">
                     Ticket Issuing Time
                   </h4>
-                  <p className="text-[#0f294d] font-medium text-[14px]">
+                  <p className="text-primary font-medium text-sm">
                     Once payment is confirmed, tickets will be issued within 2
                     hours.{" "}
                   </p>
-                </span>
+                </div>
               </li>
             </ul>
           </div>
 
           <div id="baggageAllowance">
-            <SheetTitle className="mb-1 text-[#0f294d]">
+            <SheetTitle className="mb-1">
               Baggage Allowance
             </SheetTitle>
-            <p className="text-[#8592a6] mb-5 font-medium text-[14px]">
+            <p className="text-[#8592a6] mb-5 font-medium text-sm">
               The total weight of the personal item and carry-on baggage cannot
               exceed 10 kg
             </p>
             <ul className="flex flex-col border-[1px] border-gray-300 shadow-lg rounded-lg">
-              <li className="flex gap-x-3 p-4 rounded-[6px]">
-                <Backpack className="text-[#05939f] mt-2 " />
-                <span>
-                  <h4 className="text-[#0f294d] font-semibold mb-0">
+              <li className="flex gap-x-3 md:p-4 p-2">
+                <Backpack className="text-primary mt-2 md:block hidden" />
+                <div>
+                  <h4 className="text-primary font-semibold mb-0">
                     Personal Item
                   </h4>
-                  <p className="text-[#0f294d] font-medium text-[15px]">
+                  <p className="text-primary font-medium text-[15px]">
                     1 piece per person.
                   </p>
-                  <p className="text-[#0f294d] font-medium text-[15px]">
+                  <p className="text-primary font-medium text-[15px]">
                     Must be placed under the seat in front of you
                   </p>
-                </span>
+                </div>
               </li>
-              <li className="flex gap-x-3 p-4 rounded-[6px]">
-                <Luggage className="text-[#05939f]" />
-                <span>
-                  <h4 className="text-[#0f294d] font-semibold mb-1">
+              <li className="flex gap-x-3 md:p-4 p-2">
+                <Luggage className="text-primary md:block hidden" />
+                <div>
+                  <h4 className="text-primary font-semibold mb-1">
                     Carry-on Baggage
                   </h4>
-                  <p className="text-[#0f294d] font-medium text-[15px]">
+                  <p className="text-primary font-medium text-[15px]">
                     1 piece per person.
                   </p>
-                  <small className="text-[#8592a6] font-medium text-[14px]">
+                  <small className="text-[#8592a6] font-medium text-sm">
                     Each piece cannot exceed 20*55*40 cm in size. Total
                     dimensions (length + width + height) of each piece cannot
                     exceed 115 cm.
                   </small>
-                </span>
+                </div>
               </li>
-              <li className="flex gap-x-3 p-4 rounded-[6px]">
-                <Luggage className="text-[#05939f]" />
+              <li className="flex gap-x-3 md:p-4 p-2 rounded-[6px]">
+                <Luggage className="text-primary md:block hidden" />
                 <span>
-                  <h4 className="text-[#0f294d] font-semibold mb-1">
+                  <h4 className="text-primary font-semibold mb-1">
                     Checked Baggage
                   </h4>
-                  <p className="text-[#0f294d] font-medium text-[15px]">
+                  <p className="text-primary font-medium text-[15px]">
                     1 piece(s) per person, 23 kg per piece
                   </p>
-                  <small className="text-[#8592a6] font-medium text-[14px]">
+                  <small className="text-[#8592a6] font-medium text-sm">
                     Total dimensions (length + width + height) of each piece
                     cannot exceed 158 cm.
                   </small>
                 </span>
               </li>
 
-              <li className="flex flex-col p-4">
-                <span className="flex gap-x-3">
-                  <MicVocal className="text-[#05939f] mb-2" />
-                  <h4 className="text-[#0f294d] font-semibold">
+              <li className="flex flex-col md:p-4 p-2">
+                <div className="flex gap-x-3">
+                  <MicVocal className="text-primary md:block hidden mb-2" />
+                  <h4 className="text-primary font-semibold">
                     Regulations on Special Baggage Allowance
                   </h4>
-                </span>
-                <p className="text-[#8592a6] font-medium text-[14px]">
+                </div>
+                <p className="text-[#8592a6] font-medium text-sm">
                   Each airline has different regulations on special baggage
                   (such as musical instruments, sports equipment, etc.).
                   Therefore, for baggage other than regular backpacks and
                   suitcases, we recommend checking the baggage regulations on
-                  the airline's website or contacting our customer support
+                  the airline is website or contacting our customer support
                   before traveling.
                 </p>
               </li>
@@ -193,21 +195,21 @@ export function PaymentModal() {
           </div>
 
           <div id="flightCancellation">
-            <SheetTitle className="mb-4 text-[#0f294d]">
+            <SheetTitle className="md:mb-4 mb-2 text-primary">
               Flight Cancellation & Change Policies
             </SheetTitle>
 
             <div className="border-[1px] shadow-md border-gray-300 rounded-lg p-4">
-              <p className="text-[#0f294d] font-medium text-[14px]">
+              <p className="text-primary font-medium text-sm">
                 The ticket policy is subject to the rules listed below, and
-                these might differ from policies listed on the airline's
+                these might differ from policies listed on the airline is
                 website. Any cancellation or change requests must be made
                 through Trip.com platforms or to our customer support.
               </p>
             </div>
 
-            <div className="mt-6">
-              <h4 className="text-[#0f294d] font-medium text-[14px]">
+            <div className="md:mt-6 mt-3">
+              <h4 className="text-primary font-medium text-sm">
                 Cancellation Fee(Price per passenger)
               </h4>
               <Table className="mt-3 w-full">
@@ -230,8 +232,8 @@ export function PaymentModal() {
               </Table>
             </div>
 
-            <div className="mt-6">
-              <h4 className="text-[#0f294d] font-medium text-[16px]">
+            <div className="md:mt-6 mt-3">
+              <h4 className="text-primary font-medium text-base">
                 Change fee (within the same class)
               </h4>
 
@@ -239,10 +241,10 @@ export function PaymentModal() {
                 <Table className="my-3 w-full">
                   <TableHeader className="w-full">
                     <TableRow>
-                      <TableHead className="w-[50%] font-bold text-[#0f294d]">
+                      <TableHead className="w-[50%] font-bold text-primary">
                         Request Time
                       </TableHead>
-                      <TableHead className="w-[50%] font-bold text-[#0f294d]">
+                      <TableHead className="w-[50%] font-bold text-primary">
                         Adult Tickets
                       </TableHead>
                     </TableRow>
@@ -259,13 +261,13 @@ export function PaymentModal() {
                   </TableBody>
                 </Table>
 
-                <b className="text-[#0f294d] text-[14px] mb-2 block">
+                <b className="text-primary text-sm mb-2 block">
                   Additional Information
                 </b>
-                <p className="text-[#8592a6] font-medium text-[14px]">
+                <p className="text-[#8592a6] font-medium text-sm">
                   When date/time changes result in a new ticket price which is
                   higher than the original ticket price, the difference must be
-                  paid. According to the airline's policy, once a ticket has
+                  paid. According to the airline is policy, once a ticket has
                   been changed, the change fee that has already been paid is
                   non-refundable if any further changes are made.
                 </p>

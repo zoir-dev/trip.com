@@ -28,19 +28,19 @@ const PlanSelection = () => {
       <div className="flex h-full flex-col md:flex-row justify-between items-start md:items-center bg-white  rounded-lg overflow-hidden">
         <div className="flex h-full justify-end flex-col p-4">
           <ul className="flex flex-col gap-y-2">
-            <li className="mb-2 text-[14px] text-[#8592a6]">Up to €6,000.00 (approx. $6,531.00) for additional expenses (lost baggage or missed hotel bookings)</li>
-            <li className="mb-2 text-[14px] text-[#8592a6]">24/7 live chat support from AirHelp</li>
-            <li className="mb-2 text-[14px] text-[#8592a6]">AirHelp's specialists handle the entire process of getting your compensation</li>
-            <li className="mb-2 text-[14px] text-[#8592a6]">Access to a VIP lounge if your flight is delayed by more than 1 hour or canceled less than 6 hours before departure.</li>
+            <li className="mb-2 text-[14px] text-primary/70">Up to €6,000.00 (approx. $6,531.00) for additional expenses (lost baggage or missed hotel bookings)</li>
+            <li className="mb-2 text-[14px] text-primary/70">24/7 live chat support from AirHelp</li>
+            <li className="mb-2 text-[14px] text-primary/70">AirHelp is specialists handle the entire process of getting your compensation</li>
+            <li className="mb-2 text-[14px] text-primary/70">Access to a VIP lounge if your flight is delayed by more than 1 hour or canceled less than 6 hours before departure.</li>
           </ul>
-          <a href="#" className="text-blue-600 mt-4">Learn More</a>
+          <a href="#" className="text-primary mt-4">Learn More</a>
         </div>
         <div className="flex h-full gap-x-1 w-full md:w-3/3">
           {plans.map((plan, index) => (
             <div
               key={index}
               className={`flex h-full flex-col items-center w-1/3 p-4 border ${
-                selectedPlan === plan.name ? "border-blue-500" : "border-gray-300"
+                selectedPlan === plan.name ? "border-primary border-2" : "border-gray-300"
               } rounded-lg`}
               onClick={() => setSelectedPlan(plan.name)}
             >
@@ -53,12 +53,13 @@ const PlanSelection = () => {
               <div className="mt-4 h-full">
                 {plan.benefits.map((benefit, i) => (
                     <div key={i} className="flex items-center">
-                    <span className="mr-2 mb-6">{benefit ? "✔" : "✘"}</span>
+                    <span className="mr-2 mb-6 text-primary">{benefit ? "✔" : "✘"}</span>
                   </div>
                 ))}
               </div>
               <div className="mt-4 flex flex-col justify-center gap-y-3">
-                <p className="text-[14px] whitespace-nowrap font-bold text-blue-500 mt-2">{plan.price}</p>
+                <p className="text-[14px] whitespace-nowrap font-bold text-primary mt-2">{plan.price}</p>
+
                 <input
                   type="radio"
                   name="plan"
