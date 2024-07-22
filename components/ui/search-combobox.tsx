@@ -34,22 +34,24 @@ export function SearchCombobox({ onSelect, label, url }: thisProps) {
     const [loading, setLoading] = React.useState(false)
     const t = useTranslations('shadcn')
     const locale = useLocale()
-    React.useEffect(() => {
-        async function fetchCities() {
+
+    async function handleChange(s: string) {
+        setSearch(s)
+        if (s) {
             try {
                 setLoading(true)
-                await http.post(url, {
+                const res = await http.post(url, {
                     company_req_id: process.env.NEXT_PUBLIC_COMPANY_REQ_ID,
-                    value: search
-                }).then(res => setData(res.data.data || []))
+                    value: s
+                })
+                setData(res.data.data)
             } catch (error) {
-                console.log(error)
+
             } finally {
                 setLoading(false)
             }
         }
-        search && fetchCities()
-    }, [search, url])
+    }
 
     return (
         <Popover open={open} onOpenChange={setOpen}>
@@ -69,7 +71,7 @@ export function SearchCombobox({ onSelect, label, url }: thisProps) {
             <PopoverContent className="p-0">
                 <Command>
                     <CommandList>
-                        <CommandInput placeholder={label} value={search} onValueChange={setSearch} />
+                        <CommandInput placeholder={label} value={search} onValueChange={handleChange} />
                         <CommandEmpty>{t("No results")}</CommandEmpty>
                         <CommandGroup className="relative">
                             {loading && <div className="flex items-center absolute top-0 justify-center w-full h-full backdrop-blur-sm z-10">
@@ -78,8 +80,8 @@ export function SearchCombobox({ onSelect, label, url }: thisProps) {
                             {data?.map((item: any) => (
                                 <CommandItem
                                     key={item.item[locale]}
-                                    value={item.item_code}
-                                    onSelect={(val: any) => {
+                                    value={item.item[locale]}
+                                    onSelect={() => {
                                         setValue(item.item_code === value?.item_code ? "" : item)
                                         setOpen(false)
                                         onSelect(item.item_code)

@@ -8,7 +8,6 @@ import { useEffect, useState } from "react"
 import MultiCityForm from "./multi-city"
 import OneWayForm from "./one-way"
 import { useRouter } from "next/router"
-import RoundTrip from "./round-trip"
 
 const SortFlights = () => {
     const router = useRouter();
